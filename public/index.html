@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>OrderSuccess</title>
+    <link rel="stylesheet" href="./css/alert-order.css">
+    <link rel="stylesheet" href="./css/global.css">
+
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/owl.carousel.js"></script>
+    <script>
+      $(document).ready(function(){
+        // open menu
+        $('.head .click-menu').click(function(){
+          $('.menu').addClass('active');
+          $('body').addClass('hidden');
+        });
+        $('.closemenu').click(function(){
+          $('.menu').removeClass('active');
+          $('body').removeClass('hidden');
+        })
+        // menu search
+        $('.operation form .search-menu input').click(function(){
+          $('.bg-menu').toggleClass('active');
+          $('.operation form .listmenu-search').toggleClass('active');
+        });
+        $('.bg-menu').click(function(){
+          $('.bg-menu').removeClass('active');
+          $('.operation form .listmenu-search').removeClass('active');
+        })
+        // subcate-menu
+        $('nav ul li .name-mcate').click(function(){
+          $(this).next().toggle();
+          $(this).toggleClass('active');
+        });
+        $('nav li .subcate a').click(function(){
+          $('nav li .subcate a').addClass('active');
+          $('nav li .subcate a').not(this).removeClass('active');
+        });
+        //footer another
+        $('.foot-list .seemore-info span').click(function(){
+          $('.show-another').toggleClass('active');
+          $('.foot-list .seemore-info').toggleClass('active');
+        });
+        // quick-search
+        $('.head form .search-toathuoc input').click(function(){
+          $('.head').addClass('active');
+          $('.quicksearch').addClass('active');
+        });
+        $('.head form .findsearch i.ankhang-delsearch').click(function(){
+          $('.head').removeClass('active');
+          $('.quicksearch').removeClass('active');
+        });
+        // click xem san pham
+        $('.info-order .xemsp').click(function(){
+          $(this).toggleClass('active');
+          $('.info-order ul').toggleClass('active');
+        });
+        // click huy don hang
+        $('.cancel-order span').click(function(){
+          $(this).toggleClass('active');
+        });
+        $('.btn-cancel a.click-hdh').click(function(){
+          $('.popup-cancelod').addClass('active');
+        });
+        $('.bg-popup').click(function(){
+          $('.popup-cancelod').removeClass('active');
+          $('.popup-delfn').removeClass('active');
+        });
+        $('.closepopup').click(function(){
+          $('.popup-cancelod').removeClass('active');
+          $('.popup-delfn').removeClass('active');
+        });
+        $('.none-del').click(function(){
+          $('.popup-cancelod').removeClass('active');
+        });
+        $('.btn-popup a.accept-del').click(function(){
+          $('.popup-delfn').addClass('active');
+          $('.popup-cancelod').removeClass('active');
+        });
+        $('.dl-order button').click(function(){
+          $('.popup-delfn').removeClass('active');
+        });
+      });
+      // backtotop
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>
