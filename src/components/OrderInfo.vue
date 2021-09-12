@@ -1,25 +1,25 @@
 <template>
-  <div class="info-receiver">
-    <p>
-      <i></i>
-      <span>
-        Người nhận: Anh Nghiêng, 0915511148
-        <br />
-        <b>Nhận hàng tại nhà thuốc:</b> D10/25 Dân Công Hoả Tuyển, Ấp 4, Xã Vĩnh
-        Lộc A, Huyện Bình Chánh, TP. Hồ Chí Minh (Ngay Bách hóa XANH Cách ngã tư
-        Quách Điêu-Nữ Dân Công 100m)
-      </span>
-    </p>
-    <p>
-      <i></i>
-      <span>Thời gian: <b>08h - 12h - Ngày mai</b> (16/11)</span>
-    </p>
+  <div>
+    <order-info :customerinfo="customerInfo" :customerreciver="customerRecive"/>
   </div>
 </template>
 
 <script>
-export default {};
+import {mapGetters, mapActions} from 'vuex';
+import OrderInfo from '@/common/components/customer/CustomerInfo.vue'
+export default {
+  components:{
+    OrderInfo
+  },
+    mounted() {
+        // this.$store.dispatch('GetCustomerInfo');
+        this.GetCustomerInfo();
+    },
+    computed:{
+        ...mapGetters(['customerInfo','customerRecive']),
+    },
+    methods:{
+        ...mapActions(['GetCustomerInfo']),
+    },
+}
 </script>
-
-<style>
-</style>
