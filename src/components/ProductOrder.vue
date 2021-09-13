@@ -16,7 +16,7 @@ export default {
   mounted() {
     // this.$store.dispatch("GetCustomerInfo");
     this.GetCustomerInfo();
-    console.log("productInList", this.productInList);
+    // console.log("productInList", this.productInList);
   },
   computed: {
     ...mapGetters(["productInList","customerRecive"]),

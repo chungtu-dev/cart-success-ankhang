@@ -7,10 +7,9 @@
             :src="`${a.thumb}`"  
             alt="img_empty"
           />
-          <!-- <img :src="`${post.thumbnailUrl}.jpg`"> -->
           <p>
             <span>{{a.name}}</span>
-            <!-- <span>{{a.subStance}}</span> -->
+            <span v-html="a.subStance"></span>
             <small> {{formatCurrency(a.price)}}/{{a.unitName}} </small>
           </p>
           <strong>

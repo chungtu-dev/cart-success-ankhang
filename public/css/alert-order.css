@@ -140,7 +140,8 @@ section{
 	overflow: hidden;
 	font-size: 11px;
 	line-height: 15px;
-	color: #515764;
+	/* color: #515764; */
+	color: #b5bdcc;/**/
 }
 .info-order .total span{
 	float: left;
@@ -399,8 +400,22 @@ section{
 	color: #FF7B01;
 }
 
-
-
+/*css thêm*/
+.info-order li p span:nth-child(2){ 
+	display: block;
+    overflow: hidden;
+    color: #8f9bb3;
+    font-size: 13px;
+    line-height: 17px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.info-order li p a{
+	color: #8f9bb3;
+}
+/*end-css thêm*/
 
 
 

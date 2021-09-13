@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="info-receiver">
-      <div>
+      <div v-if="customerinfos">
         <p>
           <i></i>
           <span>
-            Người nhận: {{customerinfo.customerName}}, {{customerinfo.customerPhone}}
+            Người nhận: {{customerinfos.customerName}}, {{customerinfos.customerPhone}}
             <br />
             <b>Nhận hàng tại nhà thuốc: </b>{{customerreciver.addressRecive}}
           </span>
@@ -21,6 +21,6 @@
 
 <script>
 export default {
-    props:['customerinfo','customerreciver']
+    props:['customerinfos','customerreciver']
 };
 </script>

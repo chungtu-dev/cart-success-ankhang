@@ -1,6 +1,6 @@
 <template>
   <div>
-    <order-info :customerinfo="customerInfo" :customerreciver="customerRecive"/>
+    <order-info :customerinfos="customerInfo" :customerreciver="customerRecive"/>
   </div>
 </template>
 
