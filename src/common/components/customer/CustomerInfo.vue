@@ -5,9 +5,10 @@
         <p>
           <i></i>
           <span>
-            Người nhận: {{customerinfos.customerName}}, {{customerinfos.customerPhone}}
+            Người nhận: {{this.genderCustomer}} {{ customerinfos.customerName }},
+            {{ customerinfos.customerPhone }}            
             <br />
-            <b>Nhận hàng tại nhà thuốc: </b>{{customerreciver.addressRecive}}
+            <b>Nhận hàng tại nhà thuốc: </b>{{ customerreciver.addressRecive }}
           </span>
         </p>
         <p>
@@ -20,7 +21,26 @@
 </template>
 
 <script>
+import { sexType } from "@/common/types";
 export default {
-    props:['customerinfos','customerreciver']
+  props: ["customerinfos", "customerreciver"],
+  data() {
+    return {
+      model: {
+        sex: sexType.undefined,
+      },
+    };
+  },
+  computed: {
+    genderCustomer() {
+      if (this.customerinfos.customerSex == 1) {
+        return "Anh";
+      } else if (this.customerinfos.customerSex == 2) {
+        return "Chị";
+      }
+      return "Bạn";
+      // return this.customerinfos.customerSex
+    },
+  },
 };
 </script>
