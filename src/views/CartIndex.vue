@@ -12,10 +12,14 @@
 
 <script>
 import CartHeaderSuccess from "../components/CartHeaderSuccess.vue";
-import EndSelectionOption from "../components/EndSelectionOption.vue";
 import OrderInfo from "../components/OrderInfo.vue";
+import EndSelectionOption from "../components/EndSelectionOption.vue";
 import PaymentSelection from "../components/PaymentSelection.vue";
 import ProductOrder from "../components/ProductOrder.vue";
+
+import * as c_types from "@/store/module-types/page-cart/customerInfo";
+import { mapActions } from "vuex";
+
 export default {
   components: {
     CartHeaderSuccess,
@@ -23,6 +27,12 @@ export default {
     ProductOrder,
     PaymentSelection,
     EndSelectionOption,
+  },
+  mounted() {  
+    console.log(this.GET_CART_ORDER_RESULT());
+  },
+  methods:{
+    ...mapActions([c_types.GET_CART_ORDER_RESULT])
   },
 };
 </script>

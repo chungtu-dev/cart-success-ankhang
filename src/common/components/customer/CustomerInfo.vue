@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="info-receiver">
       <div v-if="customerinfos">
         <p>
@@ -13,11 +12,10 @@
         </p>
         <p>
           <i></i>
-          <span>Thời gian: <b>08h - 12h - Ngày mai</b> (16/11)</span>
+          <span>Thời gian: <b>{{customerreciver.timeReviceFormat}}</b></span>
         </p>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
