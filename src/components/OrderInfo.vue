@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import * as c_types from "@/store/module-types/page-cart/customerInfo";
 import OrderInfo from "@/common/components/customer/CustomerInfo.vue";
 export default {

@@ -1,11 +1,9 @@
 <template>
-  <!-- <div>
-      <product-in-list-order/>
-  </div> -->
   <div class="info-order">
     <span class="text-od xemsp"
-      >Xem <span>{{ item.length }}</span> sản phẩm đã đặt <i></i
-    ></span>
+      >Xem
+      <span v-if="PRODUCT_IN_LIST && PRODUCT_IN_LIST.length > 0">{{PRODUCT_IN_LIST.length}}</span>
+      sản phẩm đã đặt <i></i></span>
     <ul>
       <product-in-list-order />
     </ul>
@@ -17,34 +15,25 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 import * as c_types from "@/store/module-types/page-cart/customerInfo";
 import ProductInListOrder from "@/common/components/box-order/ProductInListOrder.vue";
 import helper from "@/common/helper/index";
 export default {
   components: {
     ProductInListOrder,
-  },
-  data() {
-    return {
-      item: [
-        { category: "Laravel" },
-        { category: "PHP" },
-        { category: "Codeigniter" },
-      ],
-    };
-  },
-  // mounted() {
-  //   console.log(this.GET_CART_ORDER_RESULT());
-  // },
+  }, 
   computed: {
     ...mapGetters([c_types.PRODUCT_IN_LIST, [c_types.CUSTOMER_RECIVE]]),
   },
   methods: {
-    // ...mapActions([c_types.GET_CART_ORDER_RESULT]),
     formatCurrency(value) {
       return helper.formatCurrency(value);
     },
   },
+
+  created(){
+    
+  }
 };
 </script>
