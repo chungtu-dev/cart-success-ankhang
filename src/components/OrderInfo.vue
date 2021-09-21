@@ -5,7 +5,7 @@
         <i></i>
         <span>
           Người nhận:
-          {{this.genderCustomer}}
+          {{CUSTOMER_INFO.customerSex}}
           {{ CUSTOMER_INFO.customerName }},
           {{ CUSTOMER_INFO.customerPhone }}
           <br />
@@ -30,14 +30,14 @@ export default {
   },
   computed: {
     ...mapGetters([c_types.CUSTOMER_INFO,[c_types.CUSTOMER_RECIVE]]),
-    genderCustomer() {
-      if (this.CUSTOMER_INFO.customerSex == 1) {
-        return "Anh";
-      } else if (this.CUSTOMER_INFO.customerSex == 2) {
-        return "Chị";
-      }
-      return "Bạn";
-    },
+    // genderCustomer() {
+    //   if (this.CUSTOMER_INFO.customerSex == 1) {
+    //     return "Anh";
+    //   } else if (this.CUSTOMER_INFO.customerSex == 2) {
+    //     return "Chị";
+    //   }
+    //   return "Bạn";
+    // },
   },
   // methods:{
   //   ...mapActions([c_types.GET_CART_ORDER_RESULT])

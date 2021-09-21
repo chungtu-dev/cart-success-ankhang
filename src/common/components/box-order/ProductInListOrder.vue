@@ -4,7 +4,7 @@
         <img :src="`${a.thumb}`" alt="img_empty" />
         <p>
           <span>{{ a.name }}</span>
-          <span v-html="a.subStance"></span>
+          <!-- <span v-html="a.subStance"></span> -->
           <small> {{ formatCurrency(a.price) }}/{{ a.unitName }} </small>
         </p>
         <strong>

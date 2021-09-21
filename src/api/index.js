@@ -6,6 +6,6 @@ export const request = axios.create({
 });
 
 // export const request = axios.create({
-//     baseURL:"https://staging.nhathuocankhang.com/api/CartTest",
+//     baseURL:"https://staging.nhathuocankhang.com/api",
 //     timeout:1000,
 // });
