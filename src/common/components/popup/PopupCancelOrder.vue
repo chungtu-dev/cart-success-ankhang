@@ -42,11 +42,12 @@ export default {
     ...mapActions([c_types.REMOVE_ORDER_RESULT]),
     removeOrderResult() {             
       const textReason = this.note + " - " + this.listReason.filter(el => el.active === true)
-      .reduce((prev, {text}) => prev + (prev ? " - ": "") + text, "");       
-      // this.REMOVE_ORDER_RESULT({
-      //   note: this.note ? textReason + " - " + this.note : textReason,
-      // });
-      console.log("Reason",textReason);
+      .reduce((prev, {text}) => prev + (prev ? " - ": "") + text, "");   
+      console.log("Reason",textReason);    
+      this.REMOVE_ORDER_RESULT({
+        note: this.note ? textReason + " - " + this.note : textReason,        
+      });     
+      return location.reload(); 
     },
   },
 };
