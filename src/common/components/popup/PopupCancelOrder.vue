@@ -7,8 +7,8 @@
         NhathuocAnKhang.com mong nhận được góp ý của anh để cải thiện chất lượng
         dịch vụ tốt hơn!
       </p>
-      <span v-for="item in listReason" :key="item.id" v-bind:class="{active: item.active}" @click="item.active =! item.active">
-          <i class="ankhang-stick"></i>          
+      <span v-for="item in listReason" :key="item.text">
+          <i class="ankhang-stick" v-bind:class="{active: item.active}" @click="item.active =! item.active"></i>          
           {{item.text}}  
       </span>
       <textarea
@@ -30,7 +30,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-        note: "",
+        note: null,
         listReason: [
           { text: "Tôi không còn nhu cầu", active: false },
           { text: "Tôi muốn mua đơn hàng khác", active: false },
@@ -40,12 +40,13 @@ export default {
   },
   methods: {
     ...mapActions([c_types.REMOVE_ORDER_RESULT]),
-    removeOrderResult() {       
-      const textReason = this.listReason.filter(item => item.active === true)
-      .reduce((prev, {text}) => prev + (prev ? " - ":"") + text, "");      
-      this.REMOVE_ORDER_RESULT({
-        note: this.note ? textReason + " - " + this.note : textReason,
-      });
+    removeOrderResult() {             
+      const textReason = this.note + " - " + this.listReason.filter(el => el.active === true)
+      .reduce((prev, {text}) => prev + (prev ? " - ": "") + text, "");       
+      // this.REMOVE_ORDER_RESULT({
+      //   note: this.note ? textReason + " - " + this.note : textReason,
+      // });
+      console.log("Reason",textReason);
     },
   },
 };
