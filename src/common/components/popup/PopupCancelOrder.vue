@@ -1,5 +1,6 @@
 <template>
-  <div class="popup-cancelod">
+  <div>
+    <div class="popup-cancelod">
     <div class="bg-popup"></div>
     <div class="cancel-order">
       <i class="closepopup"></i>
@@ -17,19 +18,26 @@
       ></textarea>
       <div class="btn-popup">
         <a href="javascript:;" class="none-del"> KHÔNG HUỶ </a>
-        <a href="javascript:;" class="accept-del" @click="removeOrderResult()">
+        <a href="javascript:;" class="accept-del" 
+        @click="removeOrderResult()" >
           XÁC NHẬN <br />HUỶ ĐƠN HÀNG
         </a>
-      </div>
-    </div>
+      </div>      
+    </div>    
+  </div>
+  <popup-waiting-close v-if="isCancelSuccess"/>
   </div>
 </template>
 <script>
 import * as c_types from "@/store/module-types/page-cart/customerInfo";
 import { mapActions } from "vuex";
+import PopupWaitingClose from '@/common/components/popup/PopupWaitingClose.vue';
 export default {
+  components: {PopupWaitingClose},
   data() {
     return {
+      isCancelSuccess:false,
+      isShowPopupCancel:false,
         note: null,
         listReason: [
           { text: "Tôi không còn nhu cầu", active: false },
@@ -40,14 +48,14 @@ export default {
   },
   methods: {
     ...mapActions([c_types.REMOVE_ORDER_RESULT]),
-    removeOrderResult() {             
+    removeOrderResult() {        
       const textReason = this.note + " - " + this.listReason.filter(el => el.active === true)
       .reduce((prev, {text}) => prev + (prev ? " - ": "") + text, "");   
       console.log("Reason",textReason);    
       this.REMOVE_ORDER_RESULT({
         note: this.note ? textReason + " - " + this.note : textReason,        
-      });     
-      return location.reload(); 
+      })
+      this.isCancelSuccess = true;
     },
   },
 };
