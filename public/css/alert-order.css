@@ -266,7 +266,8 @@ section{
 	color: #222B45;
 }
 .cancel-order span{
-	display: block;
+	/* display: block; */
+	display: flex; /**/
 	overflow: hidden;
 	padding: 0 0 10px;
 	font-size: 14px;
