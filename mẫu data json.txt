@@ -1,0 +1,71 @@
+//sử dụng JSON SERVER
+
+{
+  "AKdata": {
+    "data": {
+      "listProductCart": [
+        {
+          "productId": 229208,
+          "productCode": "1193682000535",
+          "quantity": 1,
+          "quantityMax": 50,
+          "quantityUnit": 0,
+          "price": 7600,
+          "thumb": "https://cdn.thegioididong.com/Products/Images/5792/229208/livosil-140mg-h-120v-avatar-1-1-190x190.jpg",
+          "name": "Thuốc Livosil 140mg hộp 120 viên",
+          "unitName": "Viên",
+          "subStance": "<a href='/hoat-chat/silymarin'>Silymarin</a> 140mg",
+          "isShowPrice": false,
+          "url": null,
+          "isETC": false,
+          "status": 4,
+          "totalPrice": 7600,
+          "isBuy": true,
+          "statusText": "",
+          "isValidInsert": true,
+          "warningText": null,
+          "urlCate": null,
+          "isDisablePlus": true,
+          "isOutOffStock": true
+        }
+      ],
+      "salesOrderId": 48981500,
+      "customer": {
+        "customerId": 0,
+        "customerName": "It Test",
+        "customerPhone": "0981221212",
+        "customerSex": 1,
+        "address": null,
+        "isChoosedAddNewLocation": false,
+        "fullAddress": "Phường An Khánh, TP. Thủ Đức, Hồ Chí Minh",
+        "provinceId": 3,
+        "provinceName": "Hồ Chí Minh",
+        "districtId": 2087,
+        "districtType": null,
+        "districtName": "TP. Thủ Đức",
+        "wardId": 27125,
+        "wardType": null,
+        "wardName": "Phường An Khánh",
+        "storeId": 4831,
+        "storeName": null,
+        "isLoginProfileOrderHistory": false,
+        "profileOrderPhone": null
+      },
+      "timeRecive": "2021-09-21T21:30:00",
+      "total": 7600,
+      "receiptMethod": 1,
+      "addressRecive": "198R - 198S Xóm Chiếu, P. 14, Quận 4, TP. Hồ Chí Minh",
+      "quantityProductEtc": 0,
+      "timeReviceFormat": "Trước 21 giờ (30 phút) - Ngày mai (21/09)"
+    },
+    "code": 0,
+    "messageTitle": null,
+    "message": "",
+    "errormessage": "",
+    "redirecturl": null,
+    "typeError": 0,
+    "elementError": "",
+    "serverName": "stgwebnginx6-175",
+    "sessionId": ""
+  }
+}
