@@ -3,10 +3,13 @@ const currency = {
         var formatter = new Intl.NumberFormat('vi-VN', {
             style: 'currency',
             currency: 'VND',
-            //minimumFractionDigits: 0, // 
-            //maximumFractionDigits: 0, // 
         });
-        return formatter.format(price); /* $2,500.00 */
+        if(price > 0) {
+            return formatter.format(price);
+        }
+        else{
+            return formatter.format(price = 0);
+        }
     },    
 }
 export default currency

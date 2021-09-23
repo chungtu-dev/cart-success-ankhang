@@ -71,12 +71,13 @@ export default {
             return new Promise((resolve, reject)=>{
                 DeleteOrder()
                 .then(()=>{
-                    commit(c_types.CUSTOMER_INFO_MODULE_NAME + salesOrderId);
+                    // commit(c_types.CUSTOMER_INFO_MODULE_NAME + salesOrderId); //=> ko cho set state lại
                     resolve();
                 }).catch(error=>{
                     reject(error);
                 })
             });
         },
+
     },
 }

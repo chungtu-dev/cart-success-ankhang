@@ -1,6 +1,6 @@
 <template>
   <div class="info-receiver">
-    <div v-if="CUSTOMER_INFO">
+    <div>
       <p>
         <i></i>
         <span>
