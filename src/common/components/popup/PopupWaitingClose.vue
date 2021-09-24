@@ -7,7 +7,10 @@
 			<p>
 				Cảm ơn anh Nghiêng đã đóng góp để giúp nhà thuốc AnKhang cải tiến chất lượng dịch vụ tốt hơn! 
 			</p>
-			<button @click="closePopupCancel">ĐÓNG</button>
+
+			<!-- <button @click="closePopupCancel">ĐÓNG</button> -->
+            <a href="javascript:;" @click="closePopupCancel">ĐÓNG</a>
+
 			<small>Tự động đóng trong {{countTemp}} giây</small>
 		</div>
 	</div>
@@ -25,7 +28,7 @@ export default {
         closePopupCancel(){
             this.countDown();
             this.isClosePopupCancel = false;
-            window.location.href = "/";
+            window.location.href = "https://staging.nhathuocankhang.com/html/v2.1/home.html";
         },
 
         countDown(){
@@ -36,7 +39,7 @@ export default {
                 },1000)
             }
             else{
-                window.location.href="/";
+                window.location.href="https://staging.nhathuocankhang.com/html/v2.1/home.html";
             }
         },
     },

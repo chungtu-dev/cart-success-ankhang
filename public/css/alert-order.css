@@ -348,6 +348,26 @@ section{
 	box-sizing: border-box;
 	background: #fff;
 }
+
+/* --// */
+.dl-order a{
+	display: block;
+	overflow: hidden;
+	border: 1px solid #981C3E;
+	color: #981C3E;
+	text-transform: uppercase;
+	font-weight: 600;
+	text-align: center;
+	padding: 14px 0;
+	font-size: 15px;
+	line-height: 19px;
+	border-radius: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	background: #fff;
+}
+/* --// */
+
 .dl-order small{
 	display: block;
 	overflow: hidden;
